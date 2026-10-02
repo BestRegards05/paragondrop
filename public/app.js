@@ -500,7 +500,7 @@
     renderLeft();
   }
 
-  const feedNames = ['KiraMain', 'StandProud', 'MoriohKid', 'LuckyBoy', 'DioEnjoyer', 'ArrowHunter', 'OraOra', 'Requiem', 'Mista', 'KingCrimson', 'SBRRunner', 'VampireJoe', 'StarDust', 'Pucci', 'GoldenWind', 'Jotaro'];
+  const feedNames = ['xX_Den4ik_Xx', 'Maxim_204', 'daniil0079', 'N1kitaPro_12', 'Kirill0613', 'Timur_548', 'Artem1k2020', 'Vladik_4207', 'ilya8542', 'm1shanya_09', 'jojo_fan781', 'alex_kun17', 's0nik_12345', 'qwerty7720', 'matvey_903', 'zhora0987', 'Andrey_684', 'bobr123_77', 'Roma2284', 'yba_tryhard52', 'Kostya_719', 'player_63481', 'vamp1re_480', 'gojo7192', 'xxdanil_908', 'Yarik0_121', 'Fedor_4216', 'zephyr_089', 'stand_user004', 'DI0_9472'];
   const feedPool = ITEMS.filter(skin => skin.value >= 5);
   let previousName = '';
   function feedCard() {
