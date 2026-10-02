@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#101114"><meta name="description" content="Paragondrop — апгрейды скинов Your Bizarre Adventure."><title>Paragondrop — YBA Upgrader</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%239874f2' d='m3 14 13-11 13 11v7L16 10 3 21zm0 10 13-11 13 11v7L16 20 3 31z'/%3E%3C/svg%3E">
-<link rel="stylesheet" href="styles-v6.css">
+<link rel="stylesheet" href="styles-v7.css">
 </head>
 <body>
 <header class="topbar">
@@ -26,8 +26,8 @@
 </div>
 <div class="catalogs">
 <section class="catalog" id="inventoryPanel" aria-label="Мой инвентарь и магазин">
-  <div class="catalog-toolbar"><div class="tabs"><button id="inventoryTab" class="tab active" title="Мой инвентарь" aria-label="Мой инвентарь" aria-pressed="true" data-icon="stack"></button><button id="shopTab" class="tab" title="Магазин" aria-label="Магазин" aria-pressed="false" data-icon="bag"></button></div><h2 id="leftTitle">Мой инвентарь</h2><span id="inventoryCount" class="count"></span><span id="inventoryWorth" class="inventory-worth"></span><div class="search-wrap"><span data-icon="search"></span><input id="leftSearch" class="search" placeholder="Поиск" aria-label="Поиск в инвентаре или магазине"></div></div>
-  <div id="leftGrid" class="item-grid"></div><div id="leftEmpty" class="empty-state" hidden></div>
+<div class="catalog-toolbar"><div class="tabs"><button id="inventoryTab" class="tab active" title="Мой инвентарь" aria-label="Мой инвентарь" aria-pressed="true" data-icon="stack"></button><button id="shopTab" class="tab" title="Магазин" aria-label="Магазин" aria-pressed="false" data-icon="bag"></button></div><h2 id="leftTitle">Мой инвентарь</h2><span id="inventoryCount" class="count"></span><span id="inventoryWorth" class="inventory-worth"></span><button id="sortShop" class="sort-button" hidden aria-label="Магазин: сначала дорогие"></button><div id="shopPriceRange" class="price-range" hidden><label class="price-input"><input id="shopPriceMin" type="number" min="0" step="0.1" inputmode="decimal" placeholder="от" aria-label="Цена магазина от"><small>LA</small></label><label class="price-input"><input id="shopPriceMax" type="number" min="0" step="0.1" inputmode="decimal" placeholder="до" aria-label="Цена магазина до"><small>LA</small></label></div><div class="search-wrap"><span data-icon="search"></span><input id="leftSearch" class="search" placeholder="Поиск" aria-label="Поиск в инвентаре или магазине"></div></div>
+  <div class="left-catalog-body"><div id="leftGrid" class="item-grid"></div><div id="leftEmpty" class="empty-state" hidden></div><div id="emptyShopPrompt" class="empty-shop-prompt" hidden><div class="empty-shop-card"><strong>У тебя нет скинов</strong><button id="emptyShopButton"><span data-icon="bag"></span>Магазин скинов</button></div></div></div>
   <div class="pagination"><button id="leftPrev" aria-label="Предыдущая страница инвентаря" data-icon="left"></button><span id="leftPage"></span><button id="leftNext" aria-label="Следующая страница инвентаря" data-icon="right"></button></div>
 </section>
 <section class="catalog target-catalog" aria-label="Цели апгрейда">
@@ -52,5 +52,5 @@
   <details><summary>Источники изображений</summary><div class="rules-copy"><p>Снимок <a href="https://your-bizarre-adventure.fandom.com/wiki/Paragon_Platinum" target="_blank" rel="noopener">Paragon Platinum — Your Bizarre Adventure Wiki</a> обрезан и переведён в WebP. Материалы сообщества — <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA</a>, если на странице не указано иное. Права на игровые модели и персонажей принадлежат их владельцам.</p></div></details>
 </dialog>
 <div id="toastStack" role="status" aria-live="polite"></div>
-<script src="icons-v4.js"></script><script src="data-v5.js"></script><script src="app-v6.js"></script>
+<script src="icons-v4.js"></script><script src="data-v5.js"></script><script src="app-v7.js"></script>
 </body></html>
