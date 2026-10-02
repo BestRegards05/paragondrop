@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#101114"><meta name="description" content="Paragondrop — апгрейды скинов Your Bizarre Adventure."><title>Paragondrop — YBA Upgrader</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%239874f2' d='m3 14 13-11 13 11v7L16 10 3 21zm0 10 13-11 13 11v7L16 20 3 31z'/%3E%3C/svg%3E">
-<link rel="stylesheet" href="styles-v5.css">
+<link rel="stylesheet" href="styles-v6.css">
 </head>
 <body>
 <header class="topbar">
@@ -47,10 +47,10 @@
 <dialog id="settingsDialog">
   <div class="dialog-heading"><h2>Настройки</h2><button data-close="settingsDialog" class="icon-button" aria-label="Закрыть настройки" data-icon="close"></button></div>
   <button id="soundSetting" class="setting-row">Звук <span></span></button>
-  <details><summary>Правила игры</summary><div class="rules-copy"><p>Ставка — сумма выбранных скинов. Цели с расчётным шансом выше 75% недоступны.</p><p>При неудаче на баланс возвращается 10% ставки. Продажа скинов — по полной стоимости. 10 кликов дают 1 LA; лимит — 10 кликов в секунду.</p><p>Все предметы и валюта виртуальные. Лента апгрейдов — симуляция. Связи с инвентарём Roblox, денег и вывода нет.</p><details><summary>Расчёт вероятности</summary><p>На барабане показан расчётный процент: стоимость ставки, делённая на стоимость цели. Если он больше 30%, фактическая вероятность выигрыша ниже на 5 процентных пунктов. Например, при 75% на барабане реальный шанс — 70%. При расчётном проценте 30% и ниже уменьшения нет.</p></details></div></details>
+  <details><summary>Правила игры</summary><div class="rules-copy"><p>Шанс выигрыша равен стоимости ставки, делённой на стоимость цели. На барабане показан этот же шанс. Цели с шансом выше 75% недоступны.</p><p>При неудаче на баланс возвращается 10% ставки. Продажа скинов — по полной стоимости. 10 кликов дают 1 LA; лимит — 10 кликов в секунду.</p><p>Все предметы и валюта виртуальные. Лента апгрейдов — симуляция. Связи с инвентарём Roblox, денег и вывода нет.</p></div></details>
   <details><summary>Управление прогрессом</summary><p class="muted">Прогресс сохраняется в этом браузере. Здесь можно перенести его или начать заново.</p><div class="save-actions"><button id="exportSave">Скачать</button><button id="importSave">Загрузить</button></div><input type="file" id="saveFile" accept="application/json,.json" hidden><button id="resetBtn" class="danger-button">Сбросить прогресс</button></details>
   <details><summary>Источники изображений</summary><div class="rules-copy"><p>Снимок <a href="https://your-bizarre-adventure.fandom.com/wiki/Paragon_Platinum" target="_blank" rel="noopener">Paragon Platinum — Your Bizarre Adventure Wiki</a> обрезан и переведён в WebP. Материалы сообщества — <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA</a>, если на странице не указано иное. Права на игровые модели и персонажей принадлежат их владельцам.</p></div></details>
 </dialog>
 <div id="toastStack" role="status" aria-live="polite"></div>
-<script src="icons-v4.js"></script><script src="data-v5.js"></script><script src="app-v5.js"></script>
+<script src="icons-v4.js"></script><script src="data-v5.js"></script><script src="app-v6.js"></script>
 </body></html>
