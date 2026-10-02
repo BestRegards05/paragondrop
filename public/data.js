@@ -1858,5 +1858,17 @@ window.PARAGON_ITEMS = [
     "value": 1.5,
     "name": "ova the world",
     "code": "TWOHOVA TWOH"
+  },
+  {
+    "id": 125,
+    "slug": "paragon-platinum",
+    "sourceName": "Paragon Platinum",
+    "image": "assets/skins/paragon-platinum.webp",
+    "colors": ["#7956AD", "#DEC459"],
+    "tier": "S",
+    "stand": "SP",
+    "value": 1500,
+    "name": "Paragon Platinum",
+    "code": "Paragon Platinum"
   }
 ];

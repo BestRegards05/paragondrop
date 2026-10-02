@@ -1,35 +1,56 @@
 <!doctype html>
 <html lang="ru">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#111114"><title>Paragondrop — YBA Upgrader</title><link rel="stylesheet" href="styles.css"></head>
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#101114"><meta name="description" content="Paragondrop — апгрейды скинов Your Bizarre Adventure."><title>Paragondrop — YBA Upgrader</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%239874f2' d='m3 14 13-11 13 11v7L16 10 3 21zm0 10 13-11 13 11v7L16 20 3 31z'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="styles.css?v=4">
+</head>
 <body>
 <header class="topbar">
-<a class="brand" href="#" aria-label="Paragondrop — главная"><span class="brand-mark">⟰</span>PARAGON<span>DROP</span></a>
-<div class="header-caption">YBA UPGRADER<span>Только игровые предметы</span></div>
-<div class="top-actions"><button id="openInventory" class="header-button">▦ <span>Инвентарь</span></button><button id="openClicker" class="header-button">ϟ <span>Кликер</span></button><div class="wallet"><span class="currency">➤</span><strong id="balance">3</strong><small>LA</small></div><button id="settingsBtn" class="icon-button" aria-label="Настройки">⚙</button></div>
+  <a class="brand" href="#" aria-label="Paragondrop — главная"><span data-icon="logo"></span><span class="brand-word">PARAGON<span>DROP</span></span></a>
+  <span class="header-caption">YBA UPGRADER</span>
+  <div class="top-actions">
+    <button id="openInventory" class="header-button" title="Инвентарь"><span data-icon="stack"></span><span>Инвентарь</span></button>
+    <button id="openClicker" class="header-button" title="Кликер"><span data-icon="bolt"></span><span>Кликер</span></button>
+    <div class="wallet"><span data-icon="arrow" class="currency"></span><strong id="balance">3</strong><small>LA</small></div>
+    <button id="settingsBtn" class="icon-button" aria-label="Настройки" data-icon="settings"></button>
+  </div>
 </header>
-<aside class="activity-rail"><div class="rail-title"><span class="status-dot"></span>ДЕМО-ЛЕНТА</div><div id="liveFeed"></div></aside>
+<aside class="activity-rail" aria-label="Лента апгрейдов"><div class="rail-title"><span class="live-dot"></span>АПГРЕЙДЫ</div><div class="feed-window"><div id="liveFeed"></div></div></aside>
 <main class="main"><section class="workspace" aria-label="Апгрейд скинов">
-<div class="workspace-brand"><span>⟰</span> PARAGONDROP</div>
+<div class="workspace-brand"><span data-icon="logo"></span><span>PARAGON<span>DROP</span></span></div>
 <div class="upgrade-stage">
-<div class="stake-column"><div class="stage-tools"><button id="soundToggle" class="icon-button" aria-label="Выключить звук">♪</button><span>Возврат при неудаче: 10%</span></div><div id="stakeCard" class="hero-card"></div></div>
-<div class="upgrade-core"><div id="machine" class="machine"><div class="ticks"></div><div class="wheel-track"></div><div id="chanceArc" class="chance-arc"></div><div id="needle" class="needle"><span></span></div><div class="wheel-center"><span class="wheel-label">ШАНС АПГРЕЙДА</span><strong id="chanceValue">0<span>%</span></strong><span id="multiplier">Выбери предметы</span><div id="resultLabel" aria-live="polite"></div></div></div><button id="upgradeBtn" class="upgrade-button" disabled><span>⟰</span> Прокачать</button><span class="chance-limit">Максимальный шанс — 75%</span></div>
-<div id="targetCard" class="hero-card target-card"></div>
+  <div class="stake-column"><div class="stage-tools"><button id="soundToggle" class="icon-button" aria-label="Выключить звук" data-icon="sound"></button></div><div id="stakeCard" class="hero-card"></div></div>
+  <div class="upgrade-core"><div id="machine" class="machine"><div class="ticks"></div><div class="wheel-track"></div><div id="chanceArc" class="chance-arc"></div><div id="needle" class="needle"><span></span></div><div class="wheel-center"><span class="wheel-emblem" data-icon="logo"></span><strong id="chanceValue">0<span>%</span></strong><span id="multiplier"></span><div id="resultLabel" aria-live="polite"></div></div><div class="result-flash"></div></div><button id="upgradeBtn" class="upgrade-button" disabled><span data-icon="chevrons"></span>Прокачать</button></div>
+  <div id="targetCard" class="hero-card target-card"></div>
 </div>
 <div class="catalogs">
 <section class="catalog" id="inventoryPanel" aria-label="Мой инвентарь и магазин">
-<div class="catalog-toolbar"><div class="tabs"><button id="inventoryTab" class="tab active" title="Мой инвентарь" aria-label="Мой инвентарь" aria-pressed="true">▦</button><button id="shopTab" class="tab" title="Магазин" aria-label="Магазин" aria-pressed="false">▰</button></div><h2 id="leftTitle">Мой инвентарь</h2><span id="inventoryCount" class="count"></span><input id="leftSearch" class="search left-search" placeholder="Поиск" aria-label="Поиск в инвентаре или магазине"></div>
-<div class="catalog-subline"><span id="leftHint">Выбери скин для ставки</span><span id="inventoryWorth"></span></div><div id="leftGrid" class="item-grid"></div><div id="leftEmpty" class="empty-state" hidden></div><div class="pagination"><button id="leftPrev" aria-label="Предыдущая страница инвентаря">‹</button><span id="leftPage"></span><button id="leftNext" aria-label="Следующая страница инвентаря">›</button></div>
+  <div class="catalog-toolbar"><div class="tabs"><button id="inventoryTab" class="tab active" title="Мой инвентарь" aria-label="Мой инвентарь" aria-pressed="true" data-icon="stack"></button><button id="shopTab" class="tab" title="Магазин" aria-label="Магазин" aria-pressed="false" data-icon="bag"></button></div><h2 id="leftTitle">Мой инвентарь</h2><span id="inventoryCount" class="count"></span><span id="inventoryWorth" class="inventory-worth"></span><div class="search-wrap"><span data-icon="search"></span><input id="leftSearch" class="search" placeholder="Поиск" aria-label="Поиск в инвентаре или магазине"></div></div>
+  <div id="leftGrid" class="item-grid"></div><div id="leftEmpty" class="empty-state" hidden></div>
+  <div class="pagination"><button id="leftPrev" aria-label="Предыдущая страница инвентаря" data-icon="left"></button><span id="leftPage"></span><button id="leftNext" aria-label="Следующая страница инвентаря" data-icon="right"></button></div>
 </section>
-<section class="catalog" aria-label="Цели апгрейда">
-<div class="catalog-toolbar target-toolbar"><h2><span class="accent">⟰</span> Прокачать до</h2><button id="sortTargets" class="sort-button" aria-label="Изменить сортировку цены">Цена ↓</button><label class="price-input"><span>➤</span><input id="priceMin" inputmode="decimal" type="number" min="0" step="0.1" placeholder="от" aria-label="Минимальная цена"></label><label class="price-input"><span>➤</span><input id="priceMax" inputmode="decimal" type="number" min="0" step="0.1" placeholder="до" aria-label="Максимальная цена"></label></div>
-<div class="catalog-subline target-search-line"><input id="targetSearch" class="search" placeholder="Поиск скина или стенда" aria-label="Поиск цели апгрейда"><span id="targetCount"></span></div><div id="targetGrid" class="item-grid"></div><div id="targetEmpty" class="empty-state" hidden>По этим фильтрам ничего нет</div><div class="pagination"><button id="targetPrev" aria-label="Предыдущая страница целей">‹</button><span id="targetPage"></span><button id="targetNext" aria-label="Следующая страница целей">›</button></div>
+<section class="catalog target-catalog" aria-label="Цели апгрейда">
+  <div class="catalog-toolbar target-toolbar"><h2><span data-icon="chevrons"></span>Прокачать до</h2><div class="multipliers" aria-label="Множитель стоимости"><button data-multiplier="2" title="Цель от двойной стоимости">×2</button><button data-multiplier="4" title="Цель от четырёхкратной стоимости">×4</button><button data-multiplier="9" title="Цель от девятикратной стоимости">×9</button></div><button id="sortTargets" class="sort-button" aria-label="Изменить сортировку цены" data-icon="sortDown"></button><div class="price-range"><label class="price-input"><input id="priceMin" inputmode="decimal" type="number" min="0" step="0.1" placeholder="от" aria-label="Минимальная цена"><small>LA</small></label><label class="price-input"><input id="priceMax" inputmode="decimal" type="number" min="0" step="0.1" placeholder="до" aria-label="Максимальная цена"><small>LA</small></label></div></div>
+  <div class="target-search-line"><span data-icon="search"></span><input id="targetSearch" class="search" placeholder="Поиск скина" aria-label="Поиск цели апгрейда"><span id="targetCount" hidden></span></div>
+  <div id="targetGrid" class="item-grid"></div><div id="targetEmpty" class="empty-state" hidden>Ничего не найдено</div>
+  <div class="pagination"><button id="targetPrev" aria-label="Предыдущая страница целей" data-icon="left"></button><span id="targetPage"></span><button id="targetNext" aria-label="Следующая страница целей" data-icon="right"></button></div>
 </section>
 </div>
-<footer class="site-footer"><span>PARAGONDROP <span class="muted">/ YBA FAN PROJECT</span></span><span>Без денег, торговли и вывода. Прогресс сохраняется автоматически в этом браузере.</span></footer>
+<footer class="site-footer"><span>© 2026 Paragondrop</span><button id="rulesBtn">Правила игры</button></footer>
 </section></main>
-<dialog id="clickerDialog"><div class="dialog-heading"><div><span class="eyebrow">БЕСПЛАТНЫЕ LUCKY ARROWS</span><h2>Кликер</h2></div><button data-close="clickerDialog" class="icon-button" aria-label="Закрыть кликер">×</button></div><p class="muted">10 кликов = 1 LA. Не больше 10 кликов в секунду.</p><button id="clickOrb" class="click-orb" aria-label="Получить клик">➤</button><div class="click-progress"><span><b id="clickProgress">0</b> / 10 кликов</span><span>+1 LA</span></div><div class="progress-track"><div id="clickBar"></div></div><div class="click-stats"><span>Всего кликов <b id="totalClicks">0</b></span><span>Получено <b><span id="clickEarned">0</span> LA</b></span></div></dialog>
-<dialog id="settingsDialog"><div class="dialog-heading"><h2>Настройки</h2><button data-close="settingsDialog" class="icon-button" aria-label="Закрыть настройки">×</button></div><button id="soundSetting" class="setting-row">Звук <span></span></button><p class="muted">Сохранение автоматическое. Очистка данных браузера удалит прогресс. На другом устройстве начнётся новая игра.</p><details><summary>Управление прогрессом</summary><p class="muted">Экспорт пригодится при переезде на другой адрес сайта.</p><div class="save-actions"><button id="exportSave">Скачать прогресс</button><button id="importSave">Загрузить прогресс</button></div><input type="file" id="saveFile" accept="application/json,.json" hidden><button id="resetBtn" class="danger-button">Сбросить весь прогресс</button></details></dialog>
+<dialog id="clickerDialog">
+  <div class="dialog-heading"><h2>Lucky Arrows</h2><button data-close="clickerDialog" class="icon-button" aria-label="Закрыть кликер" data-icon="close"></button></div>
+  <button id="clickOrb" class="click-orb" aria-label="Получить клик"><span data-icon="arrow"></span><span class="orb-spark"></span></button>
+  <div class="click-progress"><span><b id="clickProgress">0</b> / 10</span><span>+1 LA</span></div><div class="progress-track"><div id="clickBar"></div></div>
+</dialog>
+<dialog id="settingsDialog">
+  <div class="dialog-heading"><h2>Настройки</h2><button data-close="settingsDialog" class="icon-button" aria-label="Закрыть настройки" data-icon="close"></button></div>
+  <button id="soundSetting" class="setting-row">Звук <span></span></button>
+  <details><summary>Правила игры</summary><div class="rules-copy"><p>Ставка — сумма выбранных скинов. Цели с расчётным шансом выше 75% недоступны. Если расчётный шанс больше 30%, итоговая вероятность уменьшается на 5 процентных пунктов. Колесо показывает итоговую вероятность.</p><p>При неудаче на баланс возвращается 10% ставки. Продажа скинов — по полной стоимости. 10 кликов дают 1 LA; лимит — 10 кликов в секунду.</p><p>Все предметы и валюта виртуальные. Лента апгрейдов — симуляция. Связи с инвентарём Roblox, денег и вывода нет.</p></div></details>
+  <details><summary>Управление прогрессом</summary><p class="muted">Прогресс сохраняется в этом браузере. Здесь можно перенести его или начать заново.</p><div class="save-actions"><button id="exportSave">Скачать</button><button id="importSave">Загрузить</button></div><input type="file" id="saveFile" accept="application/json,.json" hidden><button id="resetBtn" class="danger-button">Сбросить прогресс</button></details>
+  <details><summary>Источники изображений</summary><div class="rules-copy"><p>Снимок <a href="https://your-bizarre-adventure.fandom.com/wiki/Paragon_Platinum" target="_blank" rel="noopener">Paragon Platinum — Your Bizarre Adventure Wiki</a> обрезан и переведён в WebP. Материалы сообщества — <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA</a>, если на странице не указано иное. Права на игровые модели и персонажей принадлежат их владельцам.</p></div></details>
+</dialog>
 <div id="toastStack" role="status" aria-live="polite"></div>
-<script src="data.js"></script><script src="app.js"></script>
+<script src="icons.js?v=4"></script><script src="data.js?v=4"></script><script src="app.js?v=4"></script>
 </body></html>
-
